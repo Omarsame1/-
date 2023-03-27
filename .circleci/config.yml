@@ -1,4 +1,5 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
+# Use the l
+atest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
@@ -24,3 +25,22 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+orbs:
+  codecov:codecov/codecov@3.0.0
+jobs:
+  example-job:
+    #replace with your preferred image
+    -image:cimg/base:stable
+    steps:
+      -codecov/upload:
+        file:version: 2.1
+        flags:orbs: browser-tools: circleci/browser-tools@14.1
+        tokken:omar×=21
+        upload_name:orbs: browser-tools: circleci/browser-tools@14.1
+        url:https://sea-of-applications.msea-of-applications.myshopify.csea-of-applications.msea-of-applications.myshopify.com/colllections/all
+        validate_url:true
+        when: always ("-v-z")
+        workflows:
+          example-workflow:
+            jobs:
+              -example-job
